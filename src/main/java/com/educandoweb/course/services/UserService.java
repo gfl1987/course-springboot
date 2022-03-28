@@ -19,17 +19,28 @@ public class UserService {
 		return repository.findAll(); //retorna todo o repositório
 	}
 	
-	public User findById(Long id) {
+	public User findById(Long id) { //pesquisa um determinado usuario por ID
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
 	}
 	
-	public User insert(User obj) {
+	public User insert(User obj) { //insere usuario
 		return repository.save(obj);
 	}
 	
-	public void delete(Long id) {
+	public void delete(Long id) { //deleta usuario
 		repository.deleteById(id);
 	}
 	
+	public User update(Long id, User obj) { //atualiza um usuario por ID
+		User entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+
+	private void updateData(User entity, User obj) {
+		entity.setName(obj.getName());
+		entity.setEmail(obj.getEmail());
+		entity.setPhone(obj.getPhone());	
+	}
 }
