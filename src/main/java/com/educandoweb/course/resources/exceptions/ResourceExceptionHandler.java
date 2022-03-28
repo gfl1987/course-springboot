@@ -23,7 +23,7 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(status).body(err);
 	}
 
-	@ExceptionHandler(DatabaseException.class) //tratamento personalizado da exceção Resource Not Found Exception
+	@ExceptionHandler(DatabaseException.class) //tratamento personalizado da exceção Database Exception
 	public ResponseEntity<StandardError> database(DatabaseException e, HttpServletRequest request) {
 		String error = "Database error";
 		HttpStatus status = HttpStatus.BAD_REQUEST;
