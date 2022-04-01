@@ -1,0 +1,11 @@
+#Entendendo Config Vars do : postgres:// Heroku
+
+nikacxpvdxvaux : usuario do banco
+
+dc9958c49e10694160e0bce8583d4e5e6f56ac79c7803fe98006e9b4a060dbbf : senha
+
+ec2-54-157-79-121.compute-1.amazonaws.com : endereço host
+
+porta: 5432
+
+d61ri1hgjc8frp : Maintenance database
